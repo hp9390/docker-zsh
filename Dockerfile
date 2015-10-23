@@ -1,5 +1,6 @@
 FROM ubuntu:wily
 
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN apt-get update --fix-missing -y && apt-get update && apt-get -y upgrade \ 
       && apt-get install -y language-pack-en \
                 && locale-gen en_US.UTF-8 \
