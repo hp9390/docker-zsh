@@ -21,5 +21,11 @@ RUN ["/bin/bash", "-c", "bash <(curl -L https://raw.githubusercontent.com/kepbod
 # RUN go get github.com/github/hub
 # RUN sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`"
 # RUN bash <(curl -L https://raw.githubusercontent.com/kepbod/ivim/master/setup.sh) -m
+RUN ["/bin/bash", "-c", "npm install node-sass"]
+RUN ["/bin/bash", "-c", "npm install bower"]
+RUN ["/bin/bash", "-c", "npm install gulp"]
+RUN ["/bin/bash", "-c", "npm install grunt"]
+RUN ["/bin/bash", "-c", "npm install yo"]
+RUN ["/bin/bash", "-c", "npm install coffee-script"]
 
 ENTRYPOINT ["/bin/zsh"]
