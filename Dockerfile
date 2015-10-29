@@ -11,7 +11,7 @@ RUN apt-get update --fix-missing -y && apt-get update && apt-get -y upgrade \
                 && locale-gen en_US.UTF-8 \
                       && dpkg-reconfigure locales
 RUN echo ":let g:session_autosave = 'no'" > /root/.vimrc
-# RUN apt-get install -y apt-fast aria2
+RUN apt-get install -y aria2
 RUN apt-get install -y zsh vim curl git git-flow build-essential software-properties-common wget curl git man unzip nano tmux colord zsh emacs gnupg2 rake exuberant-ctags httpie ruby
 RUN apt-get install -y pass p7zip-full sshfs supervisor monit htop lynx-cur
 RUN curl -sL https://deb.nodesource.com/setup_4.x | bash -
