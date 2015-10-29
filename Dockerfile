@@ -14,7 +14,7 @@ RUN apt-get install -y zsh vim curl git git-flow build-essential software-proper
 RUN apt-get install -y pass p7zip-full sshfs
 RUN curl -sL https://deb.nodesource.com/setup_4.x | bash -
 RUN apt-get install -y nodejs
-RUN bash <(curl -L https://raw.githubusercontent.com/kepbod/ivim/master/setup.sh) -m
+RUN ["/bin/bash", "-c", "bash <(curl -L https://raw.githubusercontent.com/kepbod/ivim/master/setup.sh) -m"]
 # RUN apt-get install -y golang
 # RUN go get github.com/github/hub
 # RUN sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`"
