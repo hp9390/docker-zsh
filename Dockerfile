@@ -1,4 +1,5 @@
 FROM ubuntu:wily
+MAINTAINER Holger Piontek <hp9390@gmail.com>
 
 # ENV GOROOT /usr/local/go
 # ENV GOPATH $HOME/go
