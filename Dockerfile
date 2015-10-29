@@ -28,4 +28,5 @@ RUN ["/bin/bash", "-c", "npm install grunt"]
 RUN ["/bin/bash", "-c", "npm install yo"]
 RUN ["/bin/bash", "-c", "npm install coffee-script"]
 
+WORKDIR /root/
 ENTRYPOINT ["/bin/zsh"]
