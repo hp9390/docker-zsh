@@ -2,6 +2,7 @@ FROM ubuntu:wily
 MAINTAINER Holger Piontek <hp9390@gmail.com>
 
 ENV user cosmo
+ENV GOPATH /usr/share/go/
 ENV SHELL zsh
 RUN chmod u+s /usr/bin/whoami
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
@@ -12,7 +13,8 @@ RUN apt-get update --fix-missing -y && apt-get update && apt-get -y upgrade \
 RUN echo ":let g:session_autosave = 'no'" > /root/.vimrc
 RUN apt-get install -y aria2
 RUN apt-get install -y zsh vim curl git git-flow build-essential software-properties-common wget curl git man unzip nano tmux colord zsh emacs gnupg2 rake exuberant-ctags httpie ruby
-RUN apt-get install -y pass p7zip-full sshfs supervisor monit htop lynx-cur
+RUN apt-get install -y pass p7zip-full sshfs supervisor monit htop lynx-cur golang-go
+RUN go get github.com/github/hub
 RUN curl -sL https://deb.nodesource.com/setup_4.x | bash -
 RUN apt-get install -y nodejs
 RUN ["/bin/bash", "-c", "yes s | sh <(curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh) -m"]
