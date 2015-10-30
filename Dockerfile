@@ -13,7 +13,7 @@ RUN apt-get update --fix-missing -y && apt-get update && apt-get -y upgrade \
 RUN echo ":let g:session_autosave = 'no'" > /root/.vimrc
 RUN apt-get install -y aria2
 RUN apt-get install -y zsh vim curl git git-flow build-essential software-properties-common wget curl git man unzip nano tmux colord zsh emacs gnupg2 rake exuberant-ctags httpie ruby
-RUN apt-get install -y pass p7zip-full sshfs supervisor monit htop lynx-cur golang-go
+RUN apt-get install -y pass p7zip-full sshfs supervisor monit htop lynx-cur golang-go inetutils-ping
 RUN go get github.com/github/hub
 RUN curl -sL https://deb.nodesource.com/setup_4.x | bash -
 RUN apt-get install -y nodejs
