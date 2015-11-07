@@ -4,6 +4,8 @@ MAINTAINER Holger Piontek <hp9390@gmail.com>
 ENV user cosmo
 ENV GOPATH /usr/share/go/
 ENV SHELL zsh
+ADD aliases.zsh /root/.zsh/aliases.zsh 
+ADD configs.zsh /root/.zsh/configs.zsh
 RUN chmod u+s /usr/bin/whoami
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN apt-get update --fix-missing -y && apt-get update && apt-get -y upgrade \ 
@@ -19,6 +21,7 @@ RUN curl -sL https://deb.nodesource.com/setup_4.x | bash -
 RUN apt-get install -y nodejs
 RUN ["/bin/bash", "-c", "yes s | sh <(curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh) -m"]
 RUN ["/bin/bash", "-c", "bash <(curl -L https://raw.githubusercontent.com/kepbod/ivim/master/setup.sh) -m"]
+RUN ["/bin/bash", "-c", "for config_file ($HOME/.zsh/*.zsh) source $config_file"]
 RUN ["/bin/bash", "-c", "npm install -g node-sass"]
 RUN ["/bin/bash", "-c", "npm install -g bower"]
 RUN ["/bin/bash", "-c", "npm install -g gulp"]
