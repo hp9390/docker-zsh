@@ -1,7 +1,6 @@
 FROM ubuntu:wily
 MAINTAINER Holger Piontek <hp9390@gmail.com>
 
-ENV user cosmo
 ENV GOPATH /usr/share/go/
 ENV SHELL zsh
 ADD aliases.zsh /root/.zsh/aliases.zsh 
@@ -28,9 +27,6 @@ RUN ["/bin/bash", "-c", "npm install -g gulp"]
 RUN ["/bin/bash", "-c", "npm install -g grunt"]
 RUN ["/bin/bash", "-c", "npm install -g yo"]
 RUN ["/bin/bash", "-c", "npm install -g coffee-script"]
-RUN adduser --system --disabled-password --shell /bin/zsh $user
-RUN ["/bin/bash", "-c", "yes s | sh <(curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh) -m"]
-RUN ["/bin/bash", "-c", "bash <(curl -L https://raw.githubusercontent.com/kepbod/ivim/master/setup.sh) -m"]
 
 WORKDIR /root/
 ENTRYPOINT ["/bin/zsh"]
