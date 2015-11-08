@@ -20,7 +20,7 @@ RUN curl -sL https://deb.nodesource.com/setup_4.x | bash -
 RUN apt-get install -y nodejs
 RUN ["/bin/bash", "-c", "yes s | sh <(curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh) -m"]
 RUN ["/bin/bash", "-c", "bash <(curl -L https://raw.githubusercontent.com/kepbod/ivim/master/setup.sh) -m"]
-RUN ["/bin/bash", "-c", "for config_file ($HOME/.zsh/*.zsh) source $config_file"]
+RUN ["/bin/bash", "-c", "echo 'for config_file ($HOME/.zsh/*.zsh) source $config_file' >> /root/.zshrc"]
 RUN ["/bin/bash", "-c", "npm install -g node-sass"]
 RUN ["/bin/bash", "-c", "npm install -g bower"]
 RUN ["/bin/bash", "-c", "npm install -g gulp"]
