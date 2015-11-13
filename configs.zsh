@@ -7,3 +7,4 @@ if [[ -x /usr/lib/command-not-found  ]] ; then
         /usr/lib/command-not-found --no-failure-msg -- $1
     }
 fi
+export PATH=$PATH:/root/.composer/vendor/bin
