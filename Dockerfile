@@ -25,6 +25,9 @@ RUN ["/bin/bash", "-c", "chmod a+x /usr/local/bin/symfony"]
 RUN go get github.com/github/hub
 RUN ["/bin/bash", "-c", "curl -sL https://deb.nodesource.com/setup_5.x | bash -"]
 RUN apt-get install -y nodejs
+RUN ["/bin/bash", "-c", "curl -O https://bootstrap.pypa.io/get-pip.py"]
+RUN ["/bin/bash", "-c", "python get-pip.py"]
+RUN ["/bin/bash", "-c", "pip install awscli"]
 RUN ["/bin/bash", "-c", "yes s | sh <(curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh) -m"]
 RUN ["/bin/bash", "-c", "bash <(curl -L https://raw.githubusercontent.com/kepbod/ivim/master/setup.sh) -m"]
 RUN ["/bin/bash", "-c", "echo 'for config_file ($HOME/.zsh/*.zsh) source $config_file' >> /root/.zshrc"]
