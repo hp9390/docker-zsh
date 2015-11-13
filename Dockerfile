@@ -22,7 +22,7 @@ RUN ["/bin/bash", "-c", "curl -sS https://getcomposer.org/installer | php -- --i
 RUN ["/bin/bash", "-c", " curl -LsS http://symfony.com/installer -o /usr/local/bin/symfony"]
 RUN ["/bin/bash", "-c", 'composer global require "laravel/installer=~1.1"']
 RUN go get github.com/github/hub
-RUN curl -sL https://deb.nodesource.com/setup_4.x | bash -
+RUN ["/bin/bash", "-c", "curl -sL https://deb.nodesource.com/setup_5.x | bash -"]
 RUN apt-get install -y nodejs
 RUN ["/bin/bash", "-c", "yes s | sh <(curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh) -m"]
 RUN ["/bin/bash", "-c", "bash <(curl -L https://raw.githubusercontent.com/kepbod/ivim/master/setup.sh) -m"]
