@@ -13,8 +13,8 @@ RUN apt-get update --fix-missing -y && apt-get update && apt-get -y upgrade \
                       && dpkg-reconfigure locales
 RUN echo ":let g:session_autosave = 'no'" > /root/.vimrc
 RUN apt-get install -y aria2
-RUN apt-get install -y zsh vim curl git git-flow build-essential software-properties-common wget curl git man unzip nano tmux colord zsh emacs gnupg2 rake exuberant-ctags httpie ruby php5 ubuntu-dev-tools
-RUN apt-get install -y pass p7zip-full sshfs supervisor monit htop lynx-cur golang-go inetutils-ping
+RUN apt-get install -y zsh vim curl git git-flow build-essential software-properties-common wget curl git man unzip nano tmux colord zsh emacs gnupg2 rake exuberant-ctags httpie ruby php5 ubuntu-dev-tools ecryptfs-utils
+RUN apt-get install -y pass p7zip-full sshfs supervisor monit htop lynx-cur golang-go inetutils-ping encfs
 RUN ["/bin/bash", "-c", "add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make"]
 RUN ["/bin/bash", "-c", "apt-get update"]
 RUN ["/bin/bash", "-c", "apt-get install -y ubuntu-make mutt"]
