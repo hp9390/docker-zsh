@@ -14,7 +14,9 @@ RUN apt-get update --fix-missing -y && apt-get update && apt-get -y upgrade \
 RUN echo ":let g:session_autosave = 'no'" > /root/.vimrc
 RUN apt-get install -y aria2
 RUN apt-get install -y zsh vim curl git git-flow build-essential software-properties-common wget curl git man unzip nano tmux colord zsh emacs gnupg2 rake exuberant-ctags httpie ruby php5 ubuntu-dev-tools ecryptfs-utils
-RUN apt-get install -y pass p7zip-full sshfs supervisor monit htop lynx-cur golang-go inetutils-ping encfs
+RUN apt-get install -y pass p7zip-full sshfs supervisor monit htop lynx-cur golang-go inetutils-ping encfs tor proxychains
+RUN ["/bin/bash", "-c", "http -d https://raw.githubusercontent.com/haad/proxychains/master/src/proxychains.conf"]
+RUN ["/bin/bash", "-c", "cp proxychains.conf /etc/proxychains.conf"]
 RUN ["/bin/bash", "-c", "add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make"]
 RUN ["/bin/bash", "-c", "apt-get update"]
 RUN ["/bin/bash", "-c", "apt-get install -y ubuntu-make mutt"]
