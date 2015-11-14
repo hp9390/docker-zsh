@@ -13,7 +13,7 @@ RUN apt-get update --fix-missing -y && apt-get update && apt-get -y upgrade \
                       && dpkg-reconfigure locales
 RUN echo ":let g:session_autosave = 'no'" > /root/.vimrc
 RUN apt-get install --install-suggests -y aria2
-RUN apt-get install --install-suggests -y zsh vim curl git git-flow build-essential software-properties-common wget curl git man unzip nano tmux colord zsh emacs gnupg2 rake exuberant-ctags httpie ruby php5 ubuntu-dev-tools ecryptfs-utils
+RUN apt-get install --install-suggests -y zsh vim curl git git-flow build-essential software-properties-common wget curl git man unzip nano tmux colord zsh emacs gnupg2 rake exuberant-ctags httpie ruby php5 ubuntu-dev-tools
 RUN apt-get install --install-suggests -y pass p7zip-full sshfs supervisor monit htop lynx-cur golang-go inetutils-ping encfs tor proxychains
 RUN ["/bin/bash", "-c", "wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh"]
 RUN ["/bin/bash", "-c", "http -d https://raw.githubusercontent.com/haad/proxychains/master/src/proxychains.conf"]
