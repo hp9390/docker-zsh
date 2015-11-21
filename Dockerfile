@@ -23,6 +23,7 @@ RUN ["/bin/bash", "-c", "apt-get install -y zsh vim-nox curl git git-flow build-
 RUN ["/bin/bash", "-c", "apt-get install -y pass p7zip-full sshfs supervisor monit htop lynx-cur golang-go inetutils-ping encfs"]
 RUN ["/bin/bash", "-c", "apt-get install -y tor proxychains ncdu tor ding trans-de-en dict dict-de-en dictd stardict stardict-plugin qstardict"]
 RUN ["/bin/bash", "-c", "apt-get install -y goldendict dictd dict-freedict-eng-deu dict-freedict-deu-eng dict-de-en"]
+RUN ["/bin/bash", "-c", "apt-get install -y dict-freedict-deu-eng dict-freedict-deu-fra dict-freedict-eng-fra dict-freedict-deu-ita dict-freedict-eng-rus dict-freedict-eng-rus dict-freedict-eng-deu"]
 ADD https://raw.githubusercontent.com/haad/proxychains/master/src/proxychains.conf /etc/proxychains.conf
 RUN ["/bin/bash", "-c", "add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make"]
 RUN ["/bin/bash", "-c", "apt-get update"]
