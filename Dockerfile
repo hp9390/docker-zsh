@@ -27,7 +27,7 @@ RUN ["/bin/bash", "-c", "apt-get install -y dict-freedict-deu-eng dict-freedict-
 ADD https://raw.githubusercontent.com/haad/proxychains/master/src/proxychains.conf /etc/proxychains.conf
 RUN ["/bin/bash", "-c", "add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make"]
 RUN ["/bin/bash", "-c", "apt-get update"]
-RUN ["/bin/bash", "-c", "apt-get install -y ubuntu-make w3m procmail ssmtp mutt"]
+RUN ["/bin/bash", "-c", "apt-get install -y ubuntu-make w3m procmail ssmtp mutt irssi weechat weechat-curses weechat-plugins weechat-scripts weechat-doc"]
 RUN ["/bin/bash", "-c", "curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer"]
 RUN ["/bin/bash", "-c", "curl -LsS http://symfony.com/installer -o /usr/local/bin/symfony"]
 RUN ["/bin/bash", "-c", "composer global require 'laravel/installer=~1.1'"]
@@ -42,7 +42,9 @@ RUN ["/bin/bash", "-c", "yes s | sh <(curl -fsSL https://raw.githubusercontent.c
 RUN ["/bin/bash", "-c", "bash <(curl -L https://raw.githubusercontent.com/kepbod/ivim/master/setup.sh) -m"]
 RUN ["/bin/bash", "-c", "echo 'for config_file ($HOME/.zsh/*.zsh) source $config_file' >> /root/.zshrc"]
 RUN ["/bin/bash", "-c", "apt-get install -y libmhash-dev libmcrypt-dev libsqlite3-dev && git clone https://gitlab.com/Rosvall/steel.git && (cd steel && make && make install) && git clone https://gitlab.com/Rosvall/memo.git && (cd memo && make && make install)"]
-RUN ["/bin/bash", "-c", "apt-get install -y dict-freedict-all rng-tools build-essential libglib2.0-dev libssl-dev libcurl4-openssl-dev libgirepository1.0-dev megatools"]
+RUN ["/bin/bash", "-c", "apt-get install -y dict-freedict-all rng-tools build-essential libglib2.0-dev libssl-dev libcurl4-openssl-dev libgirepository1.0-dev megatools build-essential libssl-dev pkg-config libprotobuf-dev protobuf-compiler qt5-qmake qt5-default qtbase5-dev qttools5-dev-tools qtdeclarative5-dev qtmultimedia5-dev qml-module-qtquick-controls qml-module-qtquick-dialogs qml-module-qtmultimedia"]
+RUN ["/bin/bash", "-c", "git clone https://github.com/ricochet-im/ricochet.git
+&& (cd ricochet && qmake DEFINES+=RICOCHET_NO_PORTABLE && make && make install)"]
 
 WORKDIR /root/
 ENTRYPOINT ["/bin/zsh"]
