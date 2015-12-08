@@ -42,6 +42,7 @@ RUN ["/bin/bash", "-c", "yes s | sh <(curl -fsSL https://raw.githubusercontent.c
 RUN ["/bin/bash", "-c", "bash <(curl -L https://raw.githubusercontent.com/kepbod/ivim/master/setup.sh) -m"]
 RUN ["/bin/bash", "-c", "echo 'for config_file ($HOME/.zsh/*.zsh) source $config_file' >> /root/.zshrc"]
 RUN ["/bin/bash", "-c", "apt-get install -y libmhash-dev libmcrypt-dev libsqlite3-dev && git clone https://gitlab.com/Rosvall/steel.git && (cd steel && make && make install) && git clone https://gitlab.com/Rosvall/memo.git && (cd memo && make && make install)"]
+RUN ["/bin/bash", "-c", "apt-get install -y dict-freedict-all"]
 
 WORKDIR /root/
 ENTRYPOINT ["/bin/zsh"]
