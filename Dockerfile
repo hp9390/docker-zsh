@@ -43,8 +43,7 @@ RUN ["/bin/bash", "-c", "bash <(curl -L https://raw.githubusercontent.com/kepbod
 RUN ["/bin/bash", "-c", "echo 'for config_file ($HOME/.zsh/*.zsh) source $config_file' >> /root/.zshrc"]
 RUN ["/bin/bash", "-c", "apt-get install -y libmhash-dev libmcrypt-dev libsqlite3-dev && git clone https://gitlab.com/Rosvall/steel.git && (cd steel && make && make install) && git clone https://gitlab.com/Rosvall/memo.git && (cd memo && make && make install)"]
 RUN ["/bin/bash", "-c", "apt-get install -y dict-freedict-all rng-tools build-essential libglib2.0-dev libssl-dev libcurl4-openssl-dev libgirepository1.0-dev megatools build-essential libssl-dev pkg-config libprotobuf-dev protobuf-compiler qt5-qmake qt5-default qtbase5-dev qttools5-dev-tools qtdeclarative5-dev qtmultimedia5-dev qml-module-qtquick-controls qml-module-qtquick-dialogs qml-module-qtmultimedia"]
-RUN ["/bin/bash", "-c", "git clone https://github.com/ricochet-im/ricochet.git
-&& (cd ricochet && qmake DEFINES+=RICOCHET_NO_PORTABLE && make && make install)"]
+RUN ["/bin/bash", "-c", "git clone https://github.com/ricochet-im/ricochet.git && (cd ricochet && qmake DEFINES+=RICOCHET_NO_PORTABLE && make && make install)"]
 
 WORKDIR /root/
 ENTRYPOINT ["/bin/zsh"]
