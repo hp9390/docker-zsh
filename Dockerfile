@@ -32,7 +32,6 @@ RUN ["/bin/bash", "-c", "curl -sS https://getcomposer.org/installer | php -- --i
 RUN ["/bin/bash", "-c", "curl -LsS http://symfony.com/installer -o /usr/local/bin/symfony"]
 RUN ["/bin/bash", "-c", "composer global require 'laravel/installer=~1.1'"]
 RUN ["/bin/bash", "-c", "chmod a+x /usr/local/bin/symfony"]
-RUN go get github.com/github/hub
 RUN ["/bin/bash", "-c", "curl -sL https://deb.nodesource.com/setup_5.x | bash -"]
 RUN apt-get install -y nodejs
 RUN ["/bin/bash", "-c", "curl -O https://bootstrap.pypa.io/get-pip.py"]
